@@ -58,7 +58,7 @@ db_schema:
       type: datetime
     title: Feedback
   blogs:
-    client: none
+    client: search
     server: full
     columns:
     - name: title
@@ -70,13 +70,13 @@ db_schema:
     - name: content
       admin_ui: {width: 200, order: 2}
       type: string
-    - name: pubDate
-      admin_ui: {width: 200, order: 3}
-      type: datetime
     - name: author
       admin_ui: {width: 200, order: 4}
       type: link_single
       target: publishers
+    - name: pub_date
+      admin_ui: {width: 200, order: 3}
+      type: date
     title: blogs
   publishers:
     client: none

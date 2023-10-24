@@ -1,0 +1,52 @@
+container: {type: ColumnPanel}
+components:
+- name: blogCardOuter
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'YTOFTV,DLKIPW'}
+  components:
+  - name: flow_panel_1
+    properties: {align: center, vertical_align: middle}
+    type: FlowPanel
+    layout_properties: {grid_position: 'RSWHDV,FITVQQ', full_width_row: false}
+    components:
+    - name: column_panel_1
+      properties: {}
+      type: ColumnPanel
+      layout_properties: {width: 212, expand: true}
+      data_bindings: []
+      components:
+      - name: blogTitle
+        properties: {role: headline}
+        type: Label
+        layout_properties: {grid_position: 'PRCYLX,ELHDRO'}
+        data_bindings:
+        - {property: text, code: 'self.item[''title'']', writeback: false}
+      - name: blogAuthor
+        properties: {}
+        type: Label
+        layout_properties: {grid_position: 'ZPRIIJ,YUAOLA'}
+        data_bindings:
+        - {property: text, code: '''Author: '' + self.item[''author''][''name''] +
+            '', '' + self.item[''author''][''username'']', writeback: false}
+      - name: blogPubDate
+        properties: {}
+        type: Label
+        layout_properties: {grid_position: 'KTFEDN,IHCHML'}
+        data_bindings:
+        - {property: text, code: '''Published On: '' + self.item[''pub_date''].strftime("%d
+            %B, %Y")', writeback: false}
+      - name: blogContentTruncated
+        properties: {}
+        type: Label
+        layout_properties: {grid_position: 'HSBWTP,NCLOHN'}
+        data_bindings:
+        - {property: text, code: '''Extract: '' + self.item[''content''][0:200] +
+            ''...''', writeback: false}
+    - name: open_blog_link
+      properties: {role: null, text: Read More, foreground: 'theme:Primary 700', icon: 'fa:arrow-right',
+        icon_align: right, bold: true, italic: false, underline: false}
+      type: Link
+      layout_properties: {expand: false}
+    data_bindings: []
+is_package: true
