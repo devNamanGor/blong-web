@@ -12,7 +12,7 @@ components:
   layout_properties: {slot: nav-right}
   components:
   - name: homeButton
-    properties: {text: button_1, role: primary-color}
+    properties: {text: Home, role: primary-color, icon: 'fa:home'}
     type: Button
     event_bindings: {click: homeButton_click}
     layout_properties: {}
