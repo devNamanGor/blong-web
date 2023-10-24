@@ -28,7 +28,8 @@ class AddBlogPage(AddBlogPageTemplate):
     email = user['email']
     isUserPublisher = anvil.server.call('isUserPublisher', email)
     logoutButton = Button()
-    logoutButton.role = 'primary'
+    logoutButton.role = 'primary-color'
+    logoutButton.text = 'Logout'
     logoutButton.icon = 'fa:sign-out'
     logoutButton.add_event_handler('click', self.onLogoutClicked)
     self.navbar_links.add_component(logoutButton)
