@@ -1,0 +1,18 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components: []
+- name: headline_1
+  properties: {role: headline, text: Blong-Web}
+  type: Label
+  layout_properties: {slot: title}
+- name: button_1
+  properties: {text: About}
+  type: Button
+  layout_properties: {slot: nav-right}
+  event_bindings: {click: button_1_click}
