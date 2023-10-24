@@ -48,6 +48,7 @@ class AddBlogPage(AddBlogPageTemplate):
 
   def onLogoutClicked(self, **event_args):
     anvil.users.logout()
+    open_form('HomePage')
 
   def homeButton_click(self, **event_args):
     """This method is called when the button is clicked"""
