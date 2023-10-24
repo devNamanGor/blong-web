@@ -1,0 +1,63 @@
+container: {type: ColumnPanel}
+components:
+- name: headline_1
+  properties: {role: input-prompt, text: About Us | Blong-Web, foreground: 'theme:Secondary
+      700'}
+  type: Label
+  layout_properties: {grid_position: 'SREIJW,YMXSWO'}
+- name: outer_column
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'ZKLGQA,EWQIVV'}
+  components:
+  - name: who_we_are_card
+    properties: {role: card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'YXCBBZ,PYCOBY'}
+    components:
+    - name: card_1_column
+      properties: {}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'HZHTHM,BDCRJA'}
+      components:
+      - name: who_we_are_label
+        properties: {text: Who we are, foreground: 'theme:Primary 500', role: headline,
+          icon: 'fa:question', icon_align: left_edge}
+        type: Label
+        layout_properties: {grid_position: 'JXXQSO,YSNBUH'}
+        data_bindings: []
+      - name: who_we_are_text
+        properties: {text: 'We are a group of college individuals, who love to write
+            about the stuff we do, be it technical stuff, non-technical stuff, or
+            just some random things we do like roaming around the town, blogging,
+            etc. Basically, you can stay updated about what we work on and what we
+            are achieving by reading our blog posts.'}
+        type: Label
+        layout_properties: {grid_position: 'RQVRVT,LZUKNK'}
+- name: contact_us_card
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'ZKLGQA,RTCAQS'}
+  components:
+  - name: card_2_column
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'HZHTHM,BDCRJA'}
+    components:
+    - name: contact_us_label
+      properties: {text: Contact Us, foreground: 'theme:Primary 500', role: headline,
+        icon: 'fa:question', icon_align: left_edge}
+      type: Label
+      layout_properties: {grid_position: 'JXXQSO,YSNBUH'}
+      data_bindings: []
+    - name: contact_us_text
+      properties: {text: 'We can be contacted on our email: dummyBlongWeb@dummyEmail.com
+
+          Or call us on: 123456789
+
+          Or if you really want to contact us, you can''t.
+
+          '}
+      type: Label
+      layout_properties: {grid_position: 'RQVRVT,LZUKNK'}
+is_package: true

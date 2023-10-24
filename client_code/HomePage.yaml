@@ -11,10 +11,26 @@ components:
   properties: {role: headline, text: Blong-Web}
   type: Label
   layout_properties: {slot: title}
-- name: About
-  properties: {text: 'About
-
-      ', role: secondary-color, bold: true, icon: 'fa:address-book-o'}
-  type: Button
-  layout_properties: {slot: nav-right}
-  data_bindings: []
+- name: sidebar
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
+  components:
+  - name: homeLink
+    properties: {text: Home, role: null, icon: 'fa:home', foreground: 'theme:Primary
+        500'}
+    type: Link
+    layout_properties: {grid_position: 'GQOJTO,DXWTXD'}
+    event_bindings: {click: homeLink_click}
+  - name: blogsLink
+    properties: {icon: 'fa:book', role: null, text: Blogs, foreground: 'theme:Primary
+        500'}
+    type: Link
+    layout_properties: {grid_position: 'YMWRJO,VWCKYH'}
+    event_bindings: {click: blogsLink_click}
+  - name: aboutLink
+    properties: {text: About Us, role: null, icon: 'fa:info', foreground: 'theme:Primary
+        500'}
+    type: Link
+    layout_properties: {grid_position: 'XVKEDX,QRBYIU'}
+    event_bindings: {click: aboutLink_click}

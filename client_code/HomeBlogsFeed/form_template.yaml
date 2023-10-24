@@ -1,0 +1,7 @@
+container: {type: ColumnPanel}
+components:
+- name: pageHeadline
+  properties: {role: headline, text: Latest Blogs}
+  type: Label
+  layout_properties: {grid_position: 'VTWYPF,LZAFRS'}
+is_package: true
