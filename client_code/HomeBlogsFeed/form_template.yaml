@@ -3,7 +3,7 @@ components:
 - name: pageHeadline
   properties: {role: headline, text: Latest Blogs}
   type: Label
-  layout_properties: {grid_position: 'VTWYPF,LZAFRS'}
+  layout_properties: {grid_position: 'NRWWKA,ZZIEWK'}
 - name: latest_blogs_panel
   properties: {item_template: BlogCard, role: null}
   type: RepeatingPanel

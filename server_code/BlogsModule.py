@@ -19,9 +19,25 @@ import anvil.server
 
 @anvil.server.callable
 def getLatestBlogs():
-  blogSearch = app_tables.blogs.search()
+  blogSearch = app_tables.blogs.client_readable().search()
+  print(blogSearch)
   blogs = []
   i = 0
+  for b in blogSearch:
+    i = i+1
+    blogs.append({
+      'author': {
+        'editorsChoice':b['author']['editorsChoice'],
+        'joined':b['author']['joined'],
+        'name':b['author']['name'],
+        'role': b['author']['role'],
+        'username': b['author']['username']
+      },
+      'content': b['content'],
+      'image': b['image'],
+      'pub_date': b['pub_date'],
+      'title': b['title']
+    })
   for b in blogSearch:
     i = i + 1
     blogs.append({
@@ -38,4 +54,38 @@ def getLatestBlogs():
       'title': b['title']
     })
     print(i)
+    return blogs;
+
+@anvil.server.callable
+def getAllBlogs():
+  blogSearch = app_tables.blogs.client_readable().search()
+  blogs = []
+  for b in blogSearch:
+    blogs.append({
+      'author': {
+        'editorsChoice':b['author']['editorsChoice'],
+        'joined':b['author']['joined'],
+        'name':b['author']['name'],
+        'role': b['author']['role'],
+        'username': b['author']['username']
+      },
+      'content': b['content'],
+      'image': b['image'],
+      'pub_date': b['pub_date'],
+      'title': b['title']
+    })
+  for b in blogSearch:
+    blogs.append({
+      'author': {
+        'editorsChoice':b['author']['editorsChoice'],
+        'joined':b['author']['joined'],
+        'name':b['author']['name'],
+        'role': b['author']['role'],
+        'username': b['author']['username']
+      },
+      'content': b['content'],
+      'image': b['image'],
+      'pub_date': b['pub_date'],
+      'title': b['title']
+    })
     return blogs;

@@ -10,5 +10,5 @@ class HomeBlogsFeed(HomeBlogsFeedTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     blogs = anvil.server.call('getLatestBlogs')
-    self.latest_blogs_panel.items = blogs;
+    self.latest_blogs_panel.items = blogs
     # Any code you write here will run before the form opens.
