@@ -44,7 +44,7 @@ class AddBlogPage(AddBlogPageTemplate):
       
   def onLoginClicked(self, **event_args):
     open_form('LoginForm')
-    open_form('HomePage')
+    open_form('AddBlogPage')
     # Any code you write here will run when the form opens.
 
   def onLogoutClicked(self, **event_args):
