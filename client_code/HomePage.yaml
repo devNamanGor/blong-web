@@ -11,8 +11,10 @@ components:
   properties: {role: headline, text: Blong-Web}
   type: Label
   layout_properties: {slot: title}
-- name: button_1
-  properties: {text: About}
+- name: About
+  properties: {text: 'About
+
+      ', role: secondary-color, bold: true, icon: 'fa:address-book-o'}
   type: Button
   layout_properties: {slot: nav-right}
-  event_bindings: {click: button_1_click}
+  data_bindings: []

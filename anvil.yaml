@@ -31,13 +31,14 @@ services:
   client_config: {}
   server_config: {}
 cta: {preset: feedback_form_welcome}
+startup: {type: form, module: HomePage}
 package_name: Blong_Web
 allow_embedding: false
 name: Blong-Web
 runtime_options: {version: 2, server_version: python3-sandbox, client_version: '3',
   server_spec: null}
 metadata: {title: Blong-Web, description: The New Generation Blog}
-startup_form: HomeForm
+startup_form: null
 db_schema:
   feedback:
     client: none
