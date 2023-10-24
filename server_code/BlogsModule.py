@@ -1,8 +1,12 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
 import anvil.email
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from datetime import datetime
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -19,7 +23,7 @@ import anvil.server
 
 @anvil.server.callable
 def getLatestBlogs():
-  blogSearch = app_tables.blogs.client_readable().search()
+  blogSearch = app_tables.blogs.client_readable().search(tables.order_by("pub_date", ascending=False))
   print(blogSearch)
   blogs = []
   i = 0
@@ -57,8 +61,27 @@ def getLatestBlogs():
     return blogs;
 
 @anvil.server.callable
+def isUserPublisher(email):
+  results = app_tables.publishers.search(email=email)
+  i = 0
+  for result in results:
+    i = i + 1
+  return i == 1
+
+def getPublisherForEmail(email):
+  results = app_tables.publishers.search(email=email)
+  for result in results:
+    return result
+
+@anvil.server.callable(require_user=True)
+def addBlog(title, content, email, image):
+  publisher = getPublisherForEmail(email)
+  result = app_tables.blogs.add_row(author=publisher, content=content, title=title, image=image, pub_date=datetime.now().date())
+  return result != None
+
+@anvil.server.callable
 def getAllBlogs():
-  blogSearch = app_tables.blogs.client_readable().search()
+  blogSearch = app_tables.blogs.client_readable().search(tables.order_by("pub_date", ascending=False))
   blogs = []
   for b in blogSearch:
     blogs.append({

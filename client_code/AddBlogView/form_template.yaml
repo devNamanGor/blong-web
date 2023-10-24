@@ -1,0 +1,50 @@
+container: {type: ColumnPanel}
+components:
+- name: card_1
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'KAUFAT,CNEACR'}
+  components:
+  - name: label_1_copy_1
+    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Add the title, content and image for your new blog', font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'NQVXUQ,XGUPEH'}
+  - name: titleLabel
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Title:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: 'BCYBKR,RJFNQP'}
+  - name: titleField
+    properties: {bold: true, font_size: 24, italic: false}
+    type: TextBox
+    layout_properties: {grid_position: 'KIWUMI,LGELWC'}
+    event_bindings: {pressed_enter: titleField_pressed_enter}
+  - name: contentLabel
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Content:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Label
+    layout_properties: {grid_position: ''}
+  - name: contentBox
+    properties: {font_size: 14}
+    type: TextArea
+    layout_properties: {grid_position: ''}
+  - name: blogImageUploader
+    properties: {text: Add Blog Image}
+    type: FileLoader
+    layout_properties: {grid_position: 'VPQKUK,NUWCQN'}
+  - name: submit_button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    type: Button
+    layout_properties: {grid_position: 'BWUEUF,RDVPOM'}
+    event_bindings: {click: submit_button_click}
+is_package: true

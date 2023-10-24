@@ -48,6 +48,7 @@ components:
         icon_align: right, bold: true, italic: false, underline: false}
       type: Link
       layout_properties: {expand: false}
+      event_bindings: {click: open_blog_link_click}
     data_bindings: []
 is_package: true
 custom_component: true

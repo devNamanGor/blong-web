@@ -10,7 +10,7 @@ components:
   - type: ColumnPanel
     properties: {role: card, col_widths: '{}'}
     name: card_1
-    layout_properties: {grid_position: 'OGJZJD,CMXRPA'}
+    layout_properties: {grid_position: 'OGJZJD,ZCFSHE'}
     components:
     - type: Label
       properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',

@@ -5,7 +5,7 @@ components:
   type: Label
   layout_properties: {grid_position: 'NRWWKA,ZZIEWK'}
 - name: latest_blogs_panel
-  properties: {item_template: BlogCard, role: null}
+  properties: {item_template: BlogsView.BlogCard, role: null}
   type: RepeatingPanel
   layout_properties: {grid_position: 'WDFUUZ,FXBVCV'}
   data_bindings: []

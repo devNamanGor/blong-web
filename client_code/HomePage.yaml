@@ -28,6 +28,12 @@ components:
     type: Link
     layout_properties: {grid_position: 'YMWRJO,VWCKYH'}
     event_bindings: {click: blogsLink_click}
+  - name: addBlogLink
+    properties: {text: Add A Blog, role: null, icon: 'fa:plus', foreground: 'theme:Primary
+        500'}
+    type: Link
+    layout_properties: {grid_position: 'AIHQXE,LCNYSI'}
+    event_bindings: {click: addBlogLink_click}
   - name: aboutLink
     properties: {text: About Us, role: null, icon: 'fa:info', foreground: 'theme:Primary
         500'}
