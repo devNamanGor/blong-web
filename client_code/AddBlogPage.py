@@ -27,6 +27,11 @@ class AddBlogPage(AddBlogPageTemplate):
       return
     email = user['email']
     isUserPublisher = anvil.server.call('isUserPublisher', email)
+    logoutButton = Button()
+    logoutButton.role = 'primary'
+    logoutButton.icon = 'fa:sign-out'
+    logoutButton.add_event_handler('click', self.onLogoutClicked)
+    self.navbar_links.add_component(logoutButton)
     if isUserPublisher:
       self.content_panel.clear()
       self.content_panel.add_component(AddBlogView())
@@ -39,6 +44,9 @@ class AddBlogPage(AddBlogPageTemplate):
   def onLoginClicked(self, **event_args):
     open_form('LoginForm')
     # Any code you write here will run when the form opens.
+
+  def onLogoutClicked(self, **event_args):
+    anvil.users.logout()
 
   def homeButton_click(self, **event_args):
     """This method is called when the button is clicked"""
