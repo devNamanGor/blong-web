@@ -15,6 +15,7 @@ class BlogPage(BlogPageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.item = properties['currentBlog']
+    self.blogAuthor.text = 'Author: ' + self.item['author']['name'] + ', ' + self.item['author']['username']
 
     # Any code you write here will run before the form opens.
 
