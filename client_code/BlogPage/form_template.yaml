@@ -26,12 +26,10 @@ components:
   data_bindings:
   - {property: source, code: 'self.item[''image'']', writeback: false}
 - name: blogAuthor
-  properties: {foreground: 'theme:Secondary 700', font_size: 20}
-  type: Label
-  layout_properties: {grid_position: 'VXKAQT,IEKANY'}
-  data_bindings:
-  - {property: text, code: '''Author: '' + self.item[''author''][''name''] + '', ''
-      + self.item[''author''][''username'']', writeback: false}
+  properties: {foreground: 'theme:Secondary 700'}
+  type: Link
+  layout_properties: {grid_position: 'DSCPCJ,NRUPRJ'}
+  event_bindings: {click: blogAuthor_click}
 - name: blogPubDate
   properties: {foreground: 'theme:Gray 900', font_size: 18}
   type: Label

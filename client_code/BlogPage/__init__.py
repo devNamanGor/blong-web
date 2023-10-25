@@ -8,6 +8,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from ..BlogsByPublisher import BlogsByPublisher
+
 class BlogPage(BlogPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -20,4 +22,10 @@ class BlogPage(BlogPageTemplate):
     """This method is called when the link is clicked"""
     open_form('HomePage')
     pass
+
+  def blogAuthor_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('BlogsByPublisher', username=self.item['author']['username'])
+    pass
+
 

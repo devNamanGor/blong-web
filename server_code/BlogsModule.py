@@ -80,6 +80,41 @@ def addBlog(title, content, email, image):
   return result != None
 
 @anvil.server.callable
+def getBlogsForPublisher(username):
+  author = app_tables.publishers.get(username=username)
+  blogSearch = app_tables.blogs.client_readable().search(tables.order_by("pub_date", ascending=False), author=author)
+  blogs = []
+  for b in blogSearch:
+    blogs.append({
+      'author': {
+        'editorsChoice':b['author']['editorsChoice'],
+        'joined':b['author']['joined'],
+        'name':b['author']['name'],
+        'role': b['author']['role'],
+        'username': b['author']['username']
+      },
+      'content': b['content'],
+      'image': b['image'],
+      'pub_date': b['pub_date'],
+      'title': b['title']
+    })
+  for b in blogSearch:
+    blogs.append({
+      'author': {
+        'editorsChoice':b['author']['editorsChoice'],
+        'joined':b['author']['joined'],
+        'name':b['author']['name'],
+        'role': b['author']['role'],
+        'username': b['author']['username']
+      },
+      'content': b['content'],
+      'image': b['image'],
+      'pub_date': b['pub_date'],
+      'title': b['title']
+    })
+    return blogs;
+
+@anvil.server.callable
 def getAllBlogs():
   blogSearch = app_tables.blogs.client_readable().search(tables.order_by("pub_date", ascending=False))
   blogs = []

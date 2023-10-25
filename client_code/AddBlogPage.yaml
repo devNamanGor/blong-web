@@ -6,6 +6,7 @@ components:
   properties: {}
   name: content_panel
   layout_properties: {slot: default}
+  components: []
 - type: FlowPanel
   properties: {}
   name: navbar_links
